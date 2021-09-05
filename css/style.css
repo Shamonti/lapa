@@ -14,10 +14,10 @@
 	1. Typography
 	2. Header Area
 	3. Banner
-	4. 
-	5. 
-	6. 
-	7. 
+  4. Category
+	5. Events
+	6. Booking
+	7. CTA
 	8. Footer Area
 
 -----------------------------------------------------------------------------------*/
@@ -74,6 +74,7 @@ body {
   /* background-color: #f8f8f8; */
   font-size: 1.6rem;
   line-height: 1.8rem;
+  color: #fff;
 }
 .img {
   max-width: 100%;
@@ -278,6 +279,8 @@ label {
   height: 5rem;
   font-family: 'Magra', sans-serif;
   font-weight: 700;
+
+  z-index: 100;
 }
 
 .navbar-nav {
@@ -356,8 +359,109 @@ label {
   color: var(--color-tertiary) !important;
 }
 
+.modal--signup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  background-color: #505450;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+}
+
+.modal--signup img {
+  height: 10rem;
+}
+
+.modal--signup .border--line:after {
+  content: '';
+  height: 90%;
+  width: 2px;
+
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  background-color: #fff;
+}
+
+.modal--signup .form-input {
+  margin-right: -3px;
+  width: 80%;
+}
+
+.modal--signup .submit-btn {
+  color: #fff;
+}
+
+.modal--signup h1 {
+  color: #fff;
+  font-family: 'Magra', sans-serif;
+  font-size: 6rem;
+  line-height: 6rem;
+}
+
+.modal--signup p {
+  color: #fff;
+  font-family: 'Magra', sans-serif;
+  font-size: 2.4rem;
+
+  /* transition: all 0.2s; */
+}
+
+.close-modal--signup {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.show-modal--signup {
+  /* font-size: 2rem;
+  font-weight: 600;
+  padding: 1.75rem 3.5rem;
+  margin: 5rem 2rem;
+  border: none;
+  background-color: #fff;
+  color: #444;
+  border-radius: 10rem;
+  cursor: pointer; */
+}
+
+.hidden {
+  animation: fadeOut 1s;
+  display: none;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
 /*************************************************
-  2.
+  3.
   Banner
   **************************************************/
 .banner-layout {
@@ -367,12 +471,14 @@ label {
 
 .sidebar {
   background-color: var(--color-secondary);
-  height: 93vh;
+  height: 92vh;
   color: #fff;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  z-index: 20;
 }
 
 .sidebar__content {
@@ -437,8 +543,92 @@ label {
   top: 2px;
   left: 3.2rem;
 }
+
+.carousel-control-prev,
+.carousel-control-next {
+  display: none;
+}
+
+.slide {
+  height: 92vh;
+}
+
+.carousel {
+  bottom: -2rem;
+}
+
+.carousel-inner {
+  top: -12%;
+  left: 0;
+
+  width: 100%;
+}
+
+.carousel-item img {
+  height: 100vh;
+}
+
+.carousel-indicators {
+  margin: 0;
+  background-color: var(--color-secondary);
+  padding: 2rem 5rem;
+  width: auto;
+  bottom: 2rem;
+  margin-left: 15rem;
+
+  display: flex;
+  justify-content: flex-start;
+}
+
+.carousel-indicators [data-bs-target] {
+  height: 1px;
+}
+
+.carousel-indicators .active {
+  background-color: var(--color-tertiary);
+}
+
+#overlay {
+  position: absolute;
+  width: 100%;
+  height: 93.5%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.carousel-caption {
+  z-index: 10;
+  right: 0;
+  left: 8% !important;
+  bottom: 10.25rem;
+
+  text-align: left;
+  width: 50%;
+}
+
+.carousel-caption--heading {
+  font-family: 'Magra', sans-serif;
+  font-weight: 700;
+  font-size: 9rem;
+  color: #fff;
+}
+
+.carousel-caption--text {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 3.6rem;
+  color: #fff;
+  padding: 1.5rem;
+}
+
 /*************************************************
-  3.
+  4.
   Category
   **************************************************/
 .category {
@@ -640,21 +830,21 @@ label {
 }
 
 /*************************************************
-  4.
+  5.
   Events
   **************************************************/
 .heading-1 {
   font-family: 'Magra', sans-serif;
   font-weight: 700;
   font-size: 9rem;
-  color: #505450;
+  color: var(--color-grey);
 }
 
 .sub-heading {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-size: 2.4rem;
-  color: #505450;
+  color: var(--color-grey);
 }
 
 .card {
@@ -669,7 +859,7 @@ label {
 
 .card-tag {
   font-size: 1.2rem;
-  color: #505450;
+  color: var(--color-grey);
 }
 
 .card-title {
@@ -682,21 +872,145 @@ label {
 }
 
 /*************************************************
-  5.
+  6.
   Booking
   **************************************************/
+.calendar {
+  background-image: url('../images/calendar-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
+.event__date {
+  color: #fff;
+  font-family: 'Magra', sans-serif;
+  font-size: 5rem;
+}
+
+.event__title {
+  color: #fff;
+  font-family: 'Magra', sans-serif;
+  font-size: 2.5rem;
+}
+
+.event__details {
+  color: #fff;
+  font-family: 'Magra', sans-serif;
+  font-size: 1.2rem;
+}
 /*************************************************
-  6.
+  7.
   CTA
   **************************************************/
 .cta {
   background-color: #777777;
 }
 
+.border--line {
+  position: relative;
+}
+
+.border--line:after {
+  content: '';
+  height: 50%;
+  width: 1px;
+
+  position: absolute;
+  right: 0;
+  top: 25%;
+
+  background-color: #fff;
+}
+
 .heading-2 {
   font-family: 'Magra', sans-serif;
   font-weight: 700;
-  font-size: 9rem;
+  font-size: 7rem;
   color: #fff;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+}
+
+.form-input {
+  border: none;
+  border-radius: 3px;
+  outline: 0;
+  padding: 1rem;
+  width: 60%;
+  margin-right: 1rem;
+
+  font-family: 'Magro', sans-serif;
+  font-weight: 400;
+}
+
+.submit-btn {
+  font-family: 'Magro', sans-serif;
+  font-weight: 400;
+  outline: 0;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--color-tertiary);
+  color: var(--color-grey);
+  padding: 1rem 3.5rem;
+}
+
+.cta p {
+  color: #fff;
+
+  font-family: 'Magro', sans-serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+/*************************************************
+  8.
+  FOOTER
+  **************************************************/
+.footer {
+  background-color: var(--color-grey-dark);
+}
+
+.company--name {
+  display: flex;
+  align-items: flex-end;
+}
+
+.company--name img {
+  height: 4.8rem;
+  width: 18rem;
+  margin-right: 1rem;
+}
+
+.company--name p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.footer__icon {
+  height: 3.5rem;
+  width: 2.7rem;
+  margin-right: 1.5rem;
+}
+
+.footer__text {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 2.5rem;
+
+  display: flex;
+}
+
+.border--bottom {
+  width: 100%;
+}
+
+.credits img {
+  height: 3.7rem;
+  width: 19rem;
 }

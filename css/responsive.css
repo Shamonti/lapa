@@ -4,17 +4,82 @@
 
 /* Large devices (-lg-, <1200px) */
 @media only screen and (max-width: 1199.98px) {
-  
 }
 /* Medium devices (-md-, <992px) */
 @media only screen and (max-width: 991.98px) {
+  html {
+    font-size: 56.25%;
+  }
 
+  .modal--signup {
+    width: 92%;
+  }
+
+  .sidebar {
+    height: 90vh;
+  }
+
+  .banner {
+    height: 90vh;
+  }
+
+  #overlay {
+    height: 94.5%;
+  }
+
+  .overlay {
+    height: 94.5%;
+  }
+
+  .carousel-indicators {
+    bottom: 4.2rem;
+  }
 }
 /* Small devices (-sm-, <768px) */
 @media only screen and (max-width: 767.98px) {
+  html {
+    font-size: 50%;
+  }
 
+  .modal--signup .form-input {
+    margin-right: -3px;
+    width: 50%;
+  }
+
+  .event--02,
+  .event--03,
+  .event--04 {
+    display: none;
+  }
+
+  .sidebar {
+    height: 91vh;
+  }
+
+  .banner {
+    height: 90vh;
+  }
+
+  #overlay,
+  .overlay {
+    height: 96.5%;
+  }
+
+  .carousel-indicators {
+    bottom: 3rem;
+  }
 }
 /* Extra small devices (-xm-, <576px) */
 @media only screen and (max-width: 575.98px) {
+  .navbar {
+    width: 40.6rem;
+    height: 5rem;
+    font-family: 'Magra', sans-serif;
+    font-weight: 700;
+    z-index: 100;
+  }
 
+  .banner {
+    height: 90vh;
+  }
 }
