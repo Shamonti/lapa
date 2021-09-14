@@ -47,7 +47,8 @@
 }
 
 .day.today span {
-  font-weight: bold;
+  font-family: 'Magra', sans-serif;
+  font-size: 2.6rem;
 }
 
 .months-container.hidden,

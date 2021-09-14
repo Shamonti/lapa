@@ -6,8 +6,8 @@
   var defaults = {
     date: null,
     weekDayLength: 1,
-    prevButton: 'Prev',
-    nextButton: 'Next',
+    prevButton: '<',
+    nextButton: '>',
     monthYearSeparator: ' ',
     onClickDate: function (date) {},
     onChangeMonth: function (date) {},
@@ -52,23 +52,23 @@
   };
 
   var dayMap = {
-    0: 'sunday',
-    1: 'monday',
-    2: 'tuesday',
-    3: 'wednesday',
-    4: 'thursday',
-    5: 'friday',
-    6: 'saturday',
+    0: 'sun',
+    1: 'mon',
+    2: 'tues',
+    3: 'wed',
+    4: 'thurs',
+    5: 'fri',
+    6: 'sat',
   };
 
   var alternateDayMap = {
-    1: 'monday',
-    2: 'tuesday',
-    3: 'wednesday',
-    4: 'thursday',
-    5: 'friday',
-    6: 'saturday',
-    7: 'sunday',
+    1: 'mon',
+    2: 'tues',
+    3: 'wed',
+    4: 'thurs',
+    5: 'fri',
+    6: 'sat',
+    7: 'sun',
   };
 
   function getFirstDayOfMonth(currentDate) {
@@ -243,6 +243,29 @@
     return str;
   }
 
+  // function generateMonthHeaderDOM(currentDate) {
+  //   return (
+  //     '' +
+  //     '<div class="buttons-container">' +
+  //     (settings.enableMonthChange
+  //       ? '<button class="prev-button">' + settings.prevButton + '</button>'
+  //       : '') +
+  //     '<span class="label-container month-container">' +
+  //     '<span class="month-label">' +
+  //     monthMap[currentDate.getMonth() + 1] +
+  //     '</span>' +
+  //     settings.monthYearSeparator +
+  //     '<span class="year-label">' +
+  //     currentDate.getFullYear() +
+  //     '</span>' +
+  //     '</span>' +
+  //     (settings.enableMonthChange
+  //       ? '<button class="next-button">' + settings.nextButton + '</button>'
+  //       : '') +
+  //     '</div>'
+  //   );
+  // }
+
   function generateMonthHeaderDOM(currentDate) {
     return (
       '' +
@@ -251,12 +274,10 @@
         ? '<button class="prev-button">' + settings.prevButton + '</button>'
         : '') +
       '<span class="label-container month-container">' +
-      '<span class="month-label">' +
-      monthMap[currentDate.getMonth() + 1] +
+      'select month' +
       '</span>' +
       settings.monthYearSeparator +
       '<span class="year-label">' +
-      currentDate.getFullYear() +
       '</span>' +
       '</span>' +
       (settings.enableMonthChange
@@ -276,13 +297,24 @@
       0 +
       '">';
 
+    // for (var weekDay in dayMap) {
+    //   if (dayMap.hasOwnProperty(weekDay)) {
+    //     str +=
+    //       '<div class="day header" data-day="' +
+    //       weekDay +
+    //       '">' +
+    //       dayMap[weekDay].substring(0, settings.weekDayLength) +
+    //       '</div>';
+    //   }
+    // }
+
     for (var weekDay in dayMap) {
       if (dayMap.hasOwnProperty(weekDay)) {
         str +=
           '<div class="day header" data-day="' +
           weekDay +
           '">' +
-          dayMap[weekDay].substring(0, settings.weekDayLength) +
+          dayMap[weekDay] +
           '</div>';
       }
     }

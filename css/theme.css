@@ -7,7 +7,9 @@
   align-items: center;
   margin-bottom: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+  width: 50%;
+  margin-left: auto;
+  /* border-bottom: 1px solid #eee; */
 }
 
 .buttons-container .label-container {
@@ -16,10 +18,10 @@
   -moz-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
-  flex: 1;
+  flex-basis: 50%;
   text-align: center;
   text-transform: uppercase;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .year-dropdown {
@@ -49,13 +51,13 @@
 }
 
 .weeks-wrapper.header {
-  border-bottom: 1px solid #eee;
+  /* border-bottom: 1px solid #eee; */
 }
 
 .week .day.header {
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 120%;
+  /* font-weight: bold; */
+  text-transform: capitalize;
+  font-size: 2rem;
 }
 
 .day span {
@@ -70,7 +72,8 @@
 .day.today span {
   position: relative;
   display: inline-block;
-  font-size: 110%;
+  /* font-size: 110%; */
+  font-size: 2.6rem;
 }
 
 /* weekend */
@@ -134,7 +137,7 @@
 
 .special-buttons {
   text-align: center;
-  border-top: 1px solid #eee;
+  /* border-top: 1px solid #eee; */
   padding-top: 10px;
 }
 
@@ -143,4 +146,5 @@
   background: transparent;
   border: none;
   padding: 5px;
+  display: none;
 }

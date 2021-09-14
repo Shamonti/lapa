@@ -522,26 +522,25 @@ label {
 }
 
 .design-element {
-  padding-left: 3rem;
-
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .design-element__yellow {
   width: 4rem;
   height: 8rem;
   background-color: var(--color-tertiary);
+
+  position: absolute;
 }
 
 .design-element__dark {
-  width: 4rem;
-  height: 8rem;
+  width: 3.8rem;
+  height: 7.8rem;
   background-color: #20232a;
 
-  position: absolute;
   z-index: 10;
-  top: 2px;
-  left: 3.2rem;
 }
 
 .carousel-control-prev,
@@ -555,6 +554,7 @@ label {
 
 .carousel {
   bottom: -2rem;
+  position: relative; //added
 }
 
 .carousel-inner {
@@ -575,9 +575,53 @@ label {
   width: auto;
   bottom: 2rem;
   margin-left: 15rem;
+  z-index: 10;
 
   display: flex;
   justify-content: flex-start;
+}
+
+.carousel-indicators--text {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 70%;
+}
+
+#slidetext {
+  font-family: 'Magra', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  flex: 3;
+}
+
+#slidetext02 {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.6rem;
+  color: #fff;
+  flex: 1;
+}
+
+.carousel .design-element {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: flex-end; */
+}
+
+.carousel .design-element__yellow {
+  height: 4rem;
+  width: 8rem;
+  background-color: var(--color-tertiary);
+
+  position: absolute;
+}
+
+.carousel .design-element__dark {
+  height: 3.8rem;
+  width: 7.8rem;
+  background-color: #20232a;
+
+  z-index: 10;
 }
 
 .carousel-indicators [data-bs-target] {
@@ -588,10 +632,10 @@ label {
   background-color: var(--color-tertiary);
 }
 
-#overlay {
+.carousel #overlay {
   position: absolute;
   width: 100%;
-  height: 93.5%;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0;
@@ -876,9 +920,22 @@ label {
   Booking
   **************************************************/
 .calendar {
-  background-image: url('../images/calendar-bg.png');
+  background: linear-gradient(
+      0deg,
+      rgba(45, 48, 45, 0.6),
+      rgba(45, 48, 45, 0.6)
+    ),
+    url('../images/calendar-bg.png');
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.calendar--month {
+  font-family: 'Magra', sans-serif;
+  font-size: 6rem;
+
+  position: absolute;
+  top: 2%;
 }
 
 .event__date {
@@ -898,6 +955,30 @@ label {
   font-family: 'Magra', sans-serif;
   font-size: 1.2rem;
 }
+.events__list {
+  position: relative;
+}
+
+.view--all {
+  position: absolute;
+  right: 0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.view--all:hover {
+  text-decoration: underline;
+}
+
+/* .events__list {
+  max-height: 36rem;
+  overflow-y: scroll;
+  display: block;
+} */
+.content {
+  max-height: 38rem;
+}
+
 /*************************************************
   7.
   CTA

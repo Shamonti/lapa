@@ -29,7 +29,7 @@ main {
 
 .calendar-wrapper {
   width: 100%;
-  max-width: 400px;
+  max-width: 55rem;
   margin: auto;
   border: 1px solid transparent;
   padding: 10px;

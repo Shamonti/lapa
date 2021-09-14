@@ -127,3 +127,34 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+// CAROUSEL
+let total = $('.carousel-item').length;
+let currentIndex = $('div.active').index() + 1;
+let currentIndexText = 'one';
+$('#slidetext').html('0' + currentIndex + ' / ' + '0' + total);
+
+$('#slidetext02').html('Slide ' + currentIndexText);
+
+// This triggers after each slide change
+$('.carousel').on('slid.bs.carousel', function () {
+  currentIndex = $('div.active').index() + 1;
+  if (currentIndex == 1) {
+    currentIndexText = 'one';
+  } else if (currentIndex == 2) {
+    currentIndexText = 'two';
+  } else if (currentIndex == 3) {
+    currentIndexText = 'three';
+  } else if (currentIndex == 4) {
+    currentIndexText = 'four';
+  } else if (currentIndex == 5) {
+    currentIndexText = 'five';
+  }
+
+  // Now display this wherever you want
+  let text = '0' + currentIndex + ' / ' + '0' + total;
+  $('#slidetext').html(text);
+
+  let text2 = 'Slide ' + currentIndexText;
+  $('#slidetext02').html(text2);
+});
